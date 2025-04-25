@@ -1,0 +1,8 @@
+[core]
+    remote = dvc_remote
+[cache]
+    type = "hardlink,symlink"
+['remote "dvc_remote"']
+    url = ssh://91.206.15.25/home/s.gadzhibekov/dvc_files
+    user = s.gadzhibekov
+    keyfile = /home/salgasd/.ssh/id_rsa

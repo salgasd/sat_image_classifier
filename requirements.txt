@@ -1,0 +1,6 @@
+dvc==3.50.1
+dvc-ssh==4.1.1
+numpy==1.26.4
+opencv-python==4.8.0.74
+opencv-python-headless==4.9.0.80
+torch==2.3.0

@@ -1,0 +1,5 @@
+outs:
+- md5: 87fccc3d688ad351b5647c22998dfc30
+  size: 16606487
+  hash: md5
+  path: model_jit.pt

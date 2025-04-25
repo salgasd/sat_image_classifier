@@ -1,0 +1,16 @@
+defaults:
+  - _self_
+  - model: satmodel
+  - data: satdata
+  - paths: default
+
+accumulate_grad_batches: 1
+accelerator: gpu
+devices: 1
+seed: 4
+n_epochs: 100
+precision: 16-mixed
+
+log_to_clearml: true
+project_name: SatClassifier
+experiment_name: exp1

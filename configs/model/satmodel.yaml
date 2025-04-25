@@ -1,0 +1,31 @@
+_target_: src.lightning_module.SatModule
+
+net:
+  _target_: timm.create_model
+  model_name: efficientnet_b3
+  pretrained: true
+  num_classes: 17
+  drop_rate: 0.5
+
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: 1e-3
+  weight_decay: 1e-5
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.CosineAnnealingLR
+  _partial_: true
+  T_max: 10
+  eta_min: 1e-5
+
+loss:
+  _target_: torch.nn.BCEWithLogitsLoss
+
+metrics:
+  _target_: src.metrics.get_metrics
+  task: multilabel
+  num_classes: ${model.net.num_classes}
+  num_labels: ${model.net.num_classes}
+  average: macro
+  threshold: 0.5
