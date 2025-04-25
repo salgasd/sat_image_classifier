@@ -1,19 +1,21 @@
 # Satellite image classification
 
-## Подготовка рабочего окружения для тренировки
+Image classification pet project using Pytorch Lightning and Hydra
+
+## Setting up the environment for training
 
 ```bash
 make install_reqs_dev
 make get_data
 ```
 
-## Запуск тренировки
+## Training the Model
 
 ```bash
 make train
 ```
 
-Если нужно поменять базовый конфиг можно запустить так:
+You can modify the base config:
 
 ```
 PYTHONPATH=. ./venv/bin/python3 src/train.py \
@@ -22,21 +24,19 @@ PYTHONPATH=. ./venv/bin/python3 src/train.py \
 ++experiment_name="test"
 ```
 
-## История экспериментов
+## Experiment History
 
-В качестве трекера экспериментов использовался ClearML, для инициализации его нужно прописать в терминале
+ClearML was used as the experiment tracker. To initialize it, run the following command in the terminal:
 
 ```bash
 clearml-init
 ```
 
-Лучшая модель в ClearML - https://app.clear.ml/projects/4a3437e1a278419287d282f41173fc08/experiments/7ba31d2ad65248aa9ba744769d5f9f14/output/execution
-
-## Подготовка окружения для инференса
+## Setting up the environment for inference
 
 ```bash
 make install_reqs_infer
 dvc pull
 ```
 
-Пример скрипта для инференса есть тут: `src/infer.py`
+An example inference script can be found here: `src/infer.py`
